@@ -17,9 +17,11 @@ function mediaDeTresNumeros(x,y,z){
     return divisao(adicionar(x, y+z), 3)
 }
 function calculaPorcentagem(x,y){
-    
+    return multiplicacao(divisao(x, 100), y)
 }
 
 console.log('-------------- Teste de Operações / Calculadora --------------')
 
-console.log(mediaDeTresNumeros(10, 5, 7))
+console.log(
+    calculaPorcentagem(300,15)
+    )
