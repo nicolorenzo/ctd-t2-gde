@@ -12,7 +12,7 @@ h1 {
 .banner {
   width: 100%;
   padding: 200px 0;
-  background: url("../images/bg.jpg") center top;
+  background: url("../images/bg.jpg") center no-repeat;
   text-align: center;
   color: white;
 }

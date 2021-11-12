@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+.menu {
+  width: 100%;
+  background-color: aqua;
+  position: fixed;
+  float: left;
+}
+.menu img {
+  height: 50px;
+  float: left;
+  margin: 25px;
+}
+.menu button {
+  background-color: brown;
+  padding: 15px 30px;
+  margin: 25px;
+  border-radius: 20px;
+  float: right;
+}
+.banner {
+  width: 100%;
+  background-image: url("../images/banner.jpeg");
+  padding: 200px;
+  float: left;
+}
+.linha {
+  width: 100%;
+  float: left;
+}
+.coluna {
+  width: 50%;
+  float: left;
+}
+.coluna.esquerda {
+  background-color: chartreuse;
+}
+.coluna.direita {
+  background-color: red;
+}
+.produto {
+  width: 50%;
+  float: left;
+}
