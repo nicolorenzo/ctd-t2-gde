@@ -1,3 +1,4 @@
+let pronto = 'Prato pronto, bom apetite!!!';
 function microondas(prato, tempo){
     switch(prato){
         case 'pipoca':
@@ -16,13 +17,13 @@ function microondas(prato, tempo){
             mensagem(tempo,8)
             break;
         default:
-            console.log('prato inexiste');
+            console.log('prato inexiste\n'+pronto);
     }
     function mensagem(tempo,tempoIdeal){
-        tempo>=tempoIdeal*3? console.log("kabumm "):
-        tempo<tempoIdeal? console.log("tempo insuficiente"):
-        tempo>=tempoIdeal*2? console.log("comida queimou"):
-        console.log("Prato pronto, bom apetite!!!")
+        tempo>=tempoIdeal*3? console.log("kabumm\n"+pronto):
+        tempo<tempoIdeal? console.log("tempo insuficiente\n"+pronto):
+        tempo>=tempoIdeal*2? console.log("comida queimou\n"+pronto):
+        console.log(pronto)
     }
 }
 microondas('carne',10)
