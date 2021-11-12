@@ -19,10 +19,14 @@ function microondas(prato, tempo){
             console.log('prato inexiste');
     }
     function mensagem(tempo,tempoIdeal){
+        tempo>=tempoIdeal*3? console.log("kabumm "):
         tempo<tempoIdeal? console.log("tempo insuficiente"):
         tempo>=tempoIdeal*2? console.log("comida queimou"):
-        tempo>=tempoIdeal*3? console.log("kabumm"):
         console.log("Prato pronto, bom apetite!!!")
     }
 }
-microondas('carne',9)
+microondas('carne',10)
+microondas('carne',15)
+microondas('carne',30)
+microondas('carne',45)
+microondas('pizza',45)
