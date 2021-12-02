@@ -46,16 +46,16 @@ module.exports = {
             if(this.grupo[i].sexo == 'F'){
                 menorAltura = this.grupo[i].altura;
                 for(let i =0; i<this.grupo.length; i++) {
-                    if(this.grupo[i].altura < menorAltura){
+                    if(this.grupo[i].sexo == 'F' && this.grupo[i].altura < menorAltura){
                         menorMulher = this.grupo[i].nome;
-                        menorAltura = this.grupo[i].altura
+                        menorAltura = this.grupo[i].altura;
                     }
         
                 }
             }
         }
 
-        return console.log('A mulher mais alta é '+menorMulher+ ' que tem '+menorAltura+' metros');
+        return console.log('A mulher mais baixa é '+menorMulher+ ' que tem '+menorAltura+' metros');
     }
 
 }
