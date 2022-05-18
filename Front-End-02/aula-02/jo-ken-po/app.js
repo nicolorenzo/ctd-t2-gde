@@ -1,5 +1,5 @@
-let pontosUsuario = 0;
 let pontosMaquina = 0;
+let pontosUsuario = 0;
 
 // Permitir jogar novamente
 function jogarNovamente() {
@@ -7,6 +7,51 @@ function jogarNovamente() {
   if (simOuNao) {
     validaUsuario();
   }
+}
+// Armazenar pontos e se um dos jogadores chegar a 3 pontos, o jogo acaba
+function pontuacao() {
+  console.log(pontosUsuario + ' usuario pontos');
+  console.log(pontosMaquina + ' maquina pontos');
+  if (pontosUsuario === 3) {
+    pontosUsuario = 0;
+    pontosMaquina = 0;
+    alert('voce ganhou 3 partidas e venceu o jogo!');
+    jogarNovamente();
+  } else if (pontosMaquina === 3) {
+    pontosUsuario = 0;
+    pontosMaquina = 0;
+    alert('voce perdeu 3 partidas e perdeu o jogo :(');
+    jogarNovamente();
+  }
+}
+
+function jogo(escolhaUsuario) {
+  // 2 - Gerar aleaoriamente um número entre 1 e 3
+  let escolhaMaquina = Math.floor(Math.random() * 3) + 1;
+  console.log(escolhaUsuario);
+  console.log(escolhaMaquina);
+
+  // 3 - Quem ganhou
+  if (
+    escolhaUsuario > escolhaMaquina ||
+    (escolhaUsuario == 1 && escolhaMaquina == 3)
+  ) {
+    pontosUsuario++;
+    pontuacao();
+    alert('vc ganhou essa partida.');
+  } else if (
+    escolhaUsuario < escolhaMaquina ||
+    (escolhaUsuario == 3 && escolhaMaquina == 1)
+  ) {
+    pontosMaquina++;
+    pontuacao();
+    alert('vc perdeu');
+  } else {
+    console.log(pontosUsuario + ' usuario pontos');
+    console.log(pontosMaquina + ' maquina pontos');
+    alert('empate');
+  }
+  validaUsuario();
 }
 
 // Validar a escolha do usuário
@@ -21,45 +66,5 @@ function validaUsuario() {
   } else {
     jogo(escolhaUsuario);
   }
-}
-
-function jogo(escolhaUsuario) {
-  // 2 - Gerar aleaoriamente um número entre 1 e 3
-  let escolhaMaquina = Math.floor(Math.random() * 3) + 1;
-
-  // Armazenar pontos e se um dos jogadores chegar a 3 pontos, o jogo acaba
-  function pontuacao() {
-    if (pontosUsuario === 3) {
-      alert('voce ganhou 3 partidas e venceu o jogo!');
-      jogarNovamente();
-    } else if (pontosMaquina === 3) {
-      alert('voce perdeu 3 partidas e perdeu o jogo :(');
-      jogarNovamente();
-    }
-  }
-  console.log(escolhaUsuario);
-  console.log(escolhaMaquina);
-
-  // 3 - Quem ganhou
-  if (
-    escolhaUsuario > escolhaMaquina ||
-    (escolhaUsuario == 1 && escolhaMaquina == 3)
-  ) {
-    pontosUsuario += 1;
-    console.log(pontosUsuario + ' usuario pontos');
-    alert('vc ganhou essa partida.');
-  } else if (
-    escolhaUsuario < escolhaMaquina ||
-    (escolhaUsuario == 3 && escolhaMaquina == 1)
-  ) {
-    pontosMaquina += 1;
-    console.log(pontosMaquina + ' maquina pontos');
-    alert('vc perdeu');
-  } else {
-    console.log('empate');
-    alert('empate');
-  }
-  pontuacao();
-  validaUsuario();
 }
 validaUsuario();
